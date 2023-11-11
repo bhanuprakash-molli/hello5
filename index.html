@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>**Harmony in Bloom**</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+
+In the quaint town of Melodyville, where the air hummed with the sounds of laughter and the scent of blooming flowers, lived a young musician named Ava. Melodyville was known for its vibrant community, each resident contributing a unique note to the town's symphony of life.
+
+One day, as Ava wandered through the town square, she discovered an abandoned garden hidden behind overgrown vines. The garden seemed to have forgotten its melody, its once-blossoming flowers now wilted and colorless. Intrigued by the potential harmony that could be restored, Ava decided to revive the forgotten garden.
+
+She gathered a group of volunteers, each possessing a different talent—from gardening to painting and storytelling. Together, they embarked on a mission to bring the garden back to life. Ava envisioned not just a garden of flowers but a garden of stories, where each bloom would represent a shared moment within the community.
+
+As the days turned into weeks, the garden underwent a transformation. Vibrant flowers emerged, reflecting the diverse talents and passions of Melodyville's residents. Ava's music echoed through the garden, intertwining with the laughter, colors, and stories that now flourished.
+
+The once-forgotten garden became a gathering place, where residents would share their tales, showcase their art, and celebrate the unique notes they added to the town's symphony. The garden, now known as Harmony in Bloom, became a testament to the extraordinary beauty that emerges when a community comes together.
+
+Melodyville, once a town of individual melodies, had transformed into a symphony of harmony. Ava, the catalyst behind this transformation, had not only revived a garden but had also nurtured a sense of unity among the townspeople.
+
+The story of Harmony in Bloom spread beyond Melodyville's borders. People from neighboring towns visited, inspired by the town's ability to create a masterpiece from the forgotten. The garden became a symbol of the extraordinary potential that resides within communities when diverse talents are harmonized.
+
+And so, in the heart of Melodyville, the music played on, not just in Ava's melodies but in the laughter, colors, and stories that flourished in the blooming garden. Harmony in Bloom stood as a reminder that in unity, even the most forgotten places can burst into extraordinary life.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
